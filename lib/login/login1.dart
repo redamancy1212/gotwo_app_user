@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gotwo_app_user/screens/login/components/body.dart';
+import 'package:gotwo_app_user/login/components/body.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

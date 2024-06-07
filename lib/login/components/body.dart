@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gotwo_app_user/screens/login/components/background.dart';
+import 'package:gotwo_app_user/login/components/background.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

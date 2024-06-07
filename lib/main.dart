@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gotwo_app_user/constants.dart';
-import 'package:gotwo_app_user/screens/login/login1.dart';
+import 'package:gotwo_app_user/login/login1.dart';
 
 void main() {
   runApp(const MyApp());
