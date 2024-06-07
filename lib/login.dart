@@ -65,7 +65,7 @@ class _LoginpageState extends State<Loginpage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: TextField(
-                      obscureText: true, // ซ่อนนรหัส
+                      // obscureText: true, // ซ่อนนรหัส
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
