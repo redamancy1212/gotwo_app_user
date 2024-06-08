@@ -12,6 +12,16 @@ class _LoginpageState extends State<Loginpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+    appBar: AppBar(
+    backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
+    elevation: 0, // ไม่มีเงาใต้ AppBar
+    leading: IconButton(
+      icon: Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+      onPressed: () {
+        Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
+      },
+    ),
+  ),
       body: SafeArea(
         child: Center(
           child: Column(
