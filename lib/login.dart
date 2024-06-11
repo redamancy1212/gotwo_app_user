@@ -11,28 +11,28 @@ class _LoginpageState extends State<Loginpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-    appBar: AppBar(
-    backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
-    elevation: 0, // ไม่มีเงาใต้ AppBar
-    leading: IconButton(
-      icon: Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
-      onPressed: () {
-        Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
-      },
-    ),
-  ),
+      // backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
+        elevation: 0, // ไม่มีเงาใต้ AppBar
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+          onPressed: () {
+            Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
+          },
+        ),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Image.asset("assets/images/logo.jpg"), 
-              SizedBox(
+              Image.asset("assets/images/logo.jpg"),
+              const SizedBox(
                 height: 25,
               ),
 
-              Text(
+              const Text(
                 "LOGIN",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class _LoginpageState extends State<Loginpage> {
                   color: Color(0xFF1A1C43),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // textfield
               Padding(
@@ -51,8 +51,8 @@ class _LoginpageState extends State<Loginpage> {
                     border: Border.all(color: Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -62,7 +62,7 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -72,10 +72,10 @@ class _LoginpageState extends State<Loginpage> {
                     border: Border.all(color: Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                  child: const Padding(
+                    padding:EdgeInsets.only(left: 20.0),
                     child: TextField(
-                      // obscureText: true, // ซ่อนนรหัส
+                      obscureText: true, // ซ่อนนรหัส
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
@@ -84,18 +84,18 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
 
               Center(
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(
-                        Color(0xFF1A1C43)), //  background color
+                        const Color(0xFF1A1C43)), //  background color
                     minimumSize: WidgetStateProperty.all(
-                        Size(110, 50)), // Set minimum size here
+                        const Size(110, 50)), // Set minimum size here
                   ),
-                  child: Text(
+                  child: const Text(
                     'Login',
                     style: TextStyle(
                       color: Colors.white,

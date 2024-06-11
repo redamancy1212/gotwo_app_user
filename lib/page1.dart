@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/register.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -11,18 +12,18 @@ class Page1 extends StatefulWidget {
 class _Page1State extends State<Page1> {
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1A1C43),
+      backgroundColor: const Color(0xFF1A1C43),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset("assets/images/logo.jpg"),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
 
-              Text(
+              const Text(
                 "GOTWO",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -30,7 +31,7 @@ class _Page1State extends State<Page1> {
                   color: Color.fromARGB(255, 228, 228, 235),
                 ),
               ),
-              Text(
+              const Text(
                 "Ride sharing service",
                 style: TextStyle(
                   fontSize: 15,
@@ -38,16 +39,16 @@ class _Page1State extends State<Page1> {
                   fontWeight: FontWeight.w100,
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // พื้นหลัง
               Center(
                 child: Container(
                   width: 310,
                   height: 250,
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(
+                    color: const Color.fromARGB(
                         117, 86, 106, 141), // สีพื้นหลังของ Container
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -60,27 +61,30 @@ class _Page1State extends State<Page1> {
                           borderRadius:
                               BorderRadius.circular(30), // กำหนดรูปร่างของกรอบ
                           border: Border.all(
-                            color: Color.fromARGB(255, 141, 142, 155), // สีขอบ
+                            color: const Color.fromARGB(
+                                255, 141, 142, 155), // สีขอบ
                             width: 2, // ความหนาของเส้น
                           ),
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                              Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
-    );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                     const Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
+                            );
                           },
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all<Color>(
-                              Color(0xFF1A1C43),
+                              const Color(0xFF1A1C43),
                               // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                              Size(300, 60),
+                              const Size(300, 60),
                             ),
                           ),
-                          child: Text(
+                          child: const Text(
                             'Login',
                             style: TextStyle(
                               color: Colors.white,
@@ -89,7 +93,7 @@ class _Page1State extends State<Page1> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -100,16 +104,21 @@ class _Page1State extends State<Page1> {
                           ),
                         ),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () { Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                     const Register()), // ให้ NextPage() เป็นหน้าถัดไป
+                            );},
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all<Color>(
                               Colors.transparent, // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                              Size(350, 60), // กำหนดขนาดของปุ่ม
+                             const Size(350, 60), // กำหนดขนาดของปุ่ม
                             ),
                           ),
-                          child: Text(
+                          child: const Text(
                             'Register',
                             style: TextStyle(
                               color: Colors.white,
@@ -122,10 +131,10 @@ class _Page1State extends State<Page1> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              Text(
+              const Text(
                 "By gotwo ride sharing service",
                 style: TextStyle(
                   fontSize: 10,
