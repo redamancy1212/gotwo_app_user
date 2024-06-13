@@ -47,8 +47,8 @@ class _LoginpageState extends State<Loginpage> {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    // color: Colors.grey[200],
+                    border: Border.all(color: Color(0xFF1A1C43), width: 2),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -62,14 +62,14 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    // color: Colors.grey[100],
+                    border: Border.all(color: Color(0xFF1A1C43), width: 2),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(

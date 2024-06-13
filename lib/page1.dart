@@ -20,32 +20,32 @@ class _Page1State extends State<Page1> {
             children: [
               Image.asset("assets/images/logo.jpg"),
               const SizedBox(
-                height: 25,
+                height: 5,
               ),
 
               const Text(
                 "GOTWO",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 60,
+                  fontSize: 40,
                   color: Color.fromARGB(255, 228, 228, 235),
                 ),
               ),
               const Text(
                 "Ride sharing service",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 10,
                   color: Color.fromARGB(255, 199, 200, 218),
                   fontWeight: FontWeight.w100,
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
 
               // พื้นหลัง
               Center(
                 child: Container(
-                  width: 310,
-                  height: 250,
+                  width: 300,
+                  height: 200,
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(
@@ -81,19 +81,19 @@ class _Page1State extends State<Page1> {
                               // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                              const Size(300, 60),
+                              const Size(200, 60),
                             ),
                           ),
                           child: const Text(
                             'Login',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -115,14 +115,14 @@ class _Page1State extends State<Page1> {
                               Colors.transparent, // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                             const Size(350, 60), // กำหนดขนาดของปุ่ม
+                            const Size(200, 60), // กำหนดขนาดของปุ่ม
                             ),
                           ),
                           child: const Text(
                             'Register',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                           ),
                         ),
@@ -132,7 +132,7 @@ class _Page1State extends State<Page1> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
               const Text(
                 "By gotwo ride sharing service",

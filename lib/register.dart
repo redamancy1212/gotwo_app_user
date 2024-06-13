@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bank.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Register extends StatefulWidget {
@@ -23,6 +24,10 @@ class _RegisterState extends State<Register> {
     }
   }
 
+  // dropdown
+  List<String> _items = ['Female', 'Male'];
+  String? selectedItem;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,172 +42,195 @@ class _RegisterState extends State<Register> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Text(
-              "Register",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Color(0xFF1A1C43),
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            if (_image != null)
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: MemoryImage(_image!),
-              ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: selectImage,
-              child: Text('Select Image'),
-            ),
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+             const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Register",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Color(0xFF1A1C43),
+                      ),
+                    ),
+                  ],
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Name',
+              ),
+              const SizedBox(height: 30),
+              if (_image != null)
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: MemoryImage(_image!),
+                ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: selectImage,
+                child: Text('Select Image'),
+              ),
+              const SizedBox(height: 50),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Name',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Email',
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Email',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Phone number',
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Phone number',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Gender',
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        isExpanded: true,
+                        hint: const Text("Gender"),
+                        value: selectedItem,
+                        items: _items.map((String item) {
+                          return DropdownMenuItem(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            selectedItem = value;
+                          });
+                        },
+                        icon: const Icon(Icons.arrow_drop_down),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Create Passwor',
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      // obscureText: true, // ซ่อนรหัส
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Create Password',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  border: Border.all(color: Color(0xFF1A1C43), width: 1),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: TextField(
-                    obscureText: true, // ซ่อนนรหัส
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Comfirm Password',
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: TextField(
+                      obscureText: true, // ซ่อนรหัส
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Confirm Password',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 100),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all<Color>(
-                      const Color(0xFF1A1C43)), //  background color
-                  minimumSize: WidgetStateProperty.all(
-                      const Size(110, 50)), // Set minimum size here
-                ),
-                child: const Text(
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+              const SizedBox(height: 80),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF1A1C43)), // background color
+                    minimumSize: MaterialStateProperty.all(
+                        const Size(110, 50)), // Set minimum size here
+                  ),
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

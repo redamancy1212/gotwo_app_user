@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bank.dart';
 import 'package:flutter_application_1/page1.dart';
 import 'package:flutter_application_1/register.dart';
+import 'package:flutter_application_1/utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const Page1(),
+      home: Page1(),
     );
   }
 }
