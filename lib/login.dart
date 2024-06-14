@@ -16,7 +16,7 @@ class _LoginpageState extends State<Loginpage> {
         backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
         elevation: 0, // ไม่มีเงาใต้ AppBar
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+          icon:const Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
           onPressed: () {
             Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
           },
@@ -25,18 +25,18 @@ class _LoginpageState extends State<Loginpage> {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset("assets/images/logo.jpg"),
               const SizedBox(
-                height: 25,
+                height: 5,
               ),
 
               const Text(
                 "LOGIN",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 40,
                   color: Color(0xFF1A1C43),
                 ),
               ),
@@ -48,7 +48,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: Container(
                   decoration: BoxDecoration(
                     // color: Colors.grey[200],
-                    border: Border.all(color: Color(0xFF1A1C43), width: 2),
+                    border: Border.all(color: const Color(0xFF1A1C43), width: 2),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -69,7 +69,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: Container(
                   decoration: BoxDecoration(
                     // color: Colors.grey[100],
-                    border: Border.all(color: Color(0xFF1A1C43), width: 2),
+                    border: Border.all(color: const Color(0xFF1A1C43), width: 2),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -93,7 +93,7 @@ class _LoginpageState extends State<Loginpage> {
                     backgroundColor: WidgetStateProperty.all<Color>(
                         const Color(0xFF1A1C43)), //  background color
                     minimumSize: WidgetStateProperty.all(
-                        const Size(110, 50)), // Set minimum size here
+                        const Size(110, 35)), // Set minimum size here
                   ),
                   child: const Text(
                     'Login',

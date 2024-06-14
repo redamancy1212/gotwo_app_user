@@ -1,7 +1,7 @@
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/bank.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'bank.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -35,7 +35,8 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
         elevation: 0, // ไม่มีเงาใต้ AppBar
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+          icon: const Icon(Icons.arrow_back,
+              color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
           onPressed: () {
             Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
           },
@@ -46,8 +47,9 @@ class _RegisterState extends State<Register> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-             const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
+              const Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 20.0), // Adjusted padding
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -55,14 +57,14 @@ class _RegisterState extends State<Register> {
                       "Register",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 27,
                         color: Color(0xFF1A1C43),
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               if (_image != null)
                 CircleAvatar(
                   radius: 50,
@@ -71,14 +73,16 @@ class _RegisterState extends State<Register> {
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: selectImage,
-                child: Text('Select Image'),
+                child: const Text('Select Image'),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -92,12 +96,14 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -111,17 +117,23 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
                     border: Border.all(color: Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 20.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: TextField(
+                      keyboardType:
+                          TextInputType.number, // กำหนดให้กรอกได้แค่ตัวเลข
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ], // จำกัดให้กรอกเป็นตัวเลขเท่านั้น
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone number',
@@ -130,16 +142,19 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: EdgeInsets.only(
+                        left: 20.0), // Adjusted padding inside the dropdown
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         isExpanded: true,
@@ -162,18 +177,20 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0),
                     child: TextField(
-                      // obscureText: true, // ซ่อนรหัส
+                      //  obscureText: true, // ซ่อนรหัส
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Create Password',
@@ -182,12 +199,14 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Container(
+                  height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: const Padding(
@@ -202,7 +221,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 10),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
@@ -217,18 +236,19 @@ class _RegisterState extends State<Register> {
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFF1A1C43)), // background color
                     minimumSize: MaterialStateProperty.all(
-                        const Size(110, 50)), // Set minimum size here
+                        const Size(110, 35)), // Set minimum size here
                   ),
                   child: const Text(
                     'Next',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 16,
                     ),
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
             ],
           ),
         ),

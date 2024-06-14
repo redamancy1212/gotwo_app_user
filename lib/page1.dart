@@ -10,6 +10,7 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
+  @override ///////
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1A1C43),
@@ -34,17 +35,16 @@ class _Page1State extends State<Page1> {
               const Text(
                 "Ride sharing service",
                 style: TextStyle(
-                  fontSize: 10,
-                  color: Color.fromARGB(255, 199, 200, 218),
-                  fontWeight: FontWeight.w100,
+                 fontSize: 11,
+                   color: Color.fromARGB(255, 228, 228, 235),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
 
               // พื้นหลัง
               Center(
                 child: Container(
-                  width: 300,
+                  width: 270,
                   height: 200,
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
@@ -81,7 +81,7 @@ class _Page1State extends State<Page1> {
                               // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                              const Size(200, 60),
+                              const Size(180, 50),
                             ),
                           ),
                           child: const Text(
@@ -93,7 +93,7 @@ class _Page1State extends State<Page1> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius:
@@ -115,7 +115,7 @@ class _Page1State extends State<Page1> {
                               Colors.transparent, // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                            const Size(200, 60), // กำหนดขนาดของปุ่ม
+                            const Size(180, 50), // กำหนดขนาดของปุ่ม
                             ),
                           ),
                           child: const Text(
@@ -132,7 +132,7 @@ class _Page1State extends State<Page1> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               const Text(
                 "By gotwo ride sharing service",

@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class BankAccount extends StatefulWidget {
@@ -53,7 +54,7 @@ class _BankAccountState extends State<BankAccount> {
                     "Bank Account",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 27,
                       color: Color(0xFF1A1C43),
                     ),
                   ),
@@ -65,22 +66,23 @@ class _BankAccountState extends State<BankAccount> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
+                        height: 40,
                         decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Color(0xFF1A1C43), width: 1),
+                          border: Border.all(
+                              color: const Color(0xFF1A1C43), width: 1),
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
                               isExpanded: true,
@@ -105,11 +107,12 @@ class _BankAccountState extends State<BankAccount> {
                     ),
                     const SizedBox(height: 15),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
+                        height: 40,
                         decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Color(0xFF1A1C43), width: 1),
+                          border: Border.all(
+                              color: const Color(0xFF1A1C43), width: 1),
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: const Padding(
@@ -125,16 +128,22 @@ class _BankAccountState extends State<BankAccount> {
                     ),
                     const SizedBox(height: 15),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Container(
+                        height: 40,
                         decoration: BoxDecoration(
                           border:
                               Border.all(color: Color(0xFF1A1C43), width: 1),
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 20.0),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
                           child: TextField(
+                            keyboardType: TextInputType
+                                .number, // กำหนดให้กรอกได้แค่ตัวเลข
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly
+                            ], // จำกัดให้กรอกเป็นตัวเลขเท่านั้น
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Enter account number',
@@ -143,7 +152,7 @@ class _BankAccountState extends State<BankAccount> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 15),
                     if (_image != null)
                       Container(
                         width: 200,
@@ -166,7 +175,7 @@ class _BankAccountState extends State<BankAccount> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
             Center(
               child: ElevatedButton(
                 onPressed: () {},
@@ -186,7 +195,7 @@ class _BankAccountState extends State<BankAccount> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 40),
           ],
         ),
       ),
