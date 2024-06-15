@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Term extends StatefulWidget {
   const Term({Key? key}) : super(key: key);
 
@@ -9,7 +8,7 @@ class Term extends StatefulWidget {
 }
 
 class _TermState extends State<Term> {
-
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +40,54 @@ class _TermState extends State<Term> {
                       color: Color(0xFF1A1C43),
                     ),
                   ),
-                
                 ],
               ),
-            
+            ),
+            const SizedBox(height: 10),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: isChecked
+                              ? const  Color(0xFF1A1C43)
+                              : Colors.black,
+                          width: 1,
+                        ),
+                        color: isChecked ?  Color(0xFF1A1C43) : Colors.transparent,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: isChecked
+                            ? Icon(
+                                Icons.check,
+                                size: 7.0,
+                                color: Colors.white,
+                              )
+                            : Icon(
+                                Icons.check_box_outline_blank,
+                                size: 7.0,
+                                color: Colors.transparent,
+                              ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'I accept and agree to the Terms of Use.',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
             ),
             Center(
               child: ElevatedButton(
