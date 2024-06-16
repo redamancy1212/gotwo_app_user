@@ -45,15 +45,10 @@ class _RegisterState extends State<Register> {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
+            
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 20.0), // Adjusted padding
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
+                Text(
                       "Register",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -61,9 +56,7 @@ class _RegisterState extends State<Register> {
                         color: Color(0xFF1A1C43),
                       ),
                     ),
-                  ],
-                ),
-              ),
+            
               const SizedBox(height: 10),
               if (_image != null)
                 CircleAvatar(
@@ -153,8 +146,7 @@ class _RegisterState extends State<Register> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(
-                        left: 20.0), // Adjusted padding inside the dropdown
+                   padding: const EdgeInsets.symmetric(horizontal: 15.0), // Adjusted padding inside the dropdown
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         isExpanded: true,
