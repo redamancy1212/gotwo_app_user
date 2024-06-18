@@ -11,6 +11,7 @@ class _JoinState extends State<Join> {
   List<String> _items = ['Female', 'Male'];
   String? selectedItem;
   String? newValue;
+    final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +156,10 @@ class _JoinState extends State<Join> {
                 ),
               ),
              const SizedBox(width: 10,),
-           
+            Container(height: 180,width: 300,decoration: BoxDecoration(
+              color: products[0].color,
+              borderRadius: 
+            ),)
 
            
             ],
