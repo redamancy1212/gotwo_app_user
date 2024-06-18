@@ -109,6 +109,13 @@ class _TermState extends State<Term> {
               ),
             ),
             const SizedBox(height: 40),
+            OutlinedButton(
+  onPressed: () {
+    // Action to be performed when button is pressed
+  },
+  child: Text('Outlined Button'),
+),
+
           ],
         ),
       ),

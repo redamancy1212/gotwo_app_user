@@ -10,6 +10,7 @@ class Join extends StatefulWidget {
 class _JoinState extends State<Join> {
   List<String> _items = ['Female', 'Male'];
   String? selectedItem;
+  String? newValue;
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +30,24 @@ class _JoinState extends State<Join> {
               ),
               const SizedBox(height: 20),
 
-              //////////////////////////////////////
               Padding(
                 padding: const EdgeInsets.only(bottom: 0.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          selectedItem = newValue;
+                        });
+                      },
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Color.fromARGB(
-                                255, 204, 204, 204)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 204, 204, 204),
+                        ),
                         minimumSize: MaterialStateProperty.all(
-                            const Size(90, 30)),
+                          const Size(90, 30),
+                        ),
                       ),
                       child: const Text(
                         'Pickup',
@@ -62,11 +67,12 @@ class _JoinState extends State<Join> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Color.fromARGB(
-                                255, 204, 204, 204)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 204, 204, 204),
+                        ),
                         minimumSize: MaterialStateProperty.all(
-                            const Size(90, 30)),
+                          const Size(90, 30),
+                        ),
                       ),
                       child: const Text(
                         'Drop',
@@ -90,8 +96,9 @@ class _JoinState extends State<Join> {
               ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(const Color(0xFF1A1C43)),
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color(0xFF1A1C43),
+                  ),
                   minimumSize: MaterialStateProperty.all(const Size(90, 30)),
                 ),
                 child: const Text(
@@ -103,15 +110,14 @@ class _JoinState extends State<Join> {
                 ),
               ),
               const SizedBox(height: 10),
-              
-              //////////////////////////////////
+
               // Aligned dropdown box to the right-hand side
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Container(
-                    width: 100, // Adjust width as needed
+                    width: 80, // Reduced width
                     decoration: BoxDecoration(
                       border: Border.all(color: const Color(0xFF1A1C43)),
                       borderRadius: BorderRadius.circular(8.0),
@@ -123,30 +129,35 @@ class _JoinState extends State<Join> {
                           isExpanded: true,
                           hint: const Text(
                             "Gender",
-                            style: TextStyle(fontSize: 12), // Adjust text size
+                            style: TextStyle(fontSize: 11), // Smaller text size
                           ),
-                          value: selectedItem,
+                          value: newValue,
                           items: _items.map((String item) {
                             return DropdownMenuItem(
                               value: item,
                               child: Text(
                                 item,
-                                style: TextStyle(fontSize: 12), // Adjust text size
+                                style: TextStyle(
+                                    fontSize: 11), // Smaller text size
                               ),
                             );
                           }).toList(),
                           onChanged: (String? value) {
                             setState(() {
-                              selectedItem = value;
+                              newValue = value;
                             });
                           },
-                          icon: const Icon(Icons.arrow_drop_down),
+                          icon: const Icon(Icons.arrow_drop_down, size: 16),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
+             const SizedBox(width: 10,),
+           
+
+           
             ],
           ),
         ),
