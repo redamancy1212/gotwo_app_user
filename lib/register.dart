@@ -38,7 +38,7 @@ class _RegisterState extends State<Register> {
           icon: const Icon(Icons.arrow_back,
               color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
           onPressed: () {
-            Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
+            // Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
           },
         ),
       ),
@@ -217,12 +217,12 @@ class _RegisterState extends State<Register> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) =>
+                    //           const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
+                    // );
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(

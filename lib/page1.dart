@@ -27,16 +27,15 @@ class _Page1State extends State<Page1> {
               const Text(
                 "GOTWO",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                  color: Color.fromARGB(255, 228, 228, 235),
-                ),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                    color: Color(0xFFCCCCCC)),
               ),
               const Text(
                 "Ride sharing service",
                 style: TextStyle(
-                 fontSize: 11,
-                   color: Color.fromARGB(255, 228, 228, 235),
+                  fontSize: 11,
+                  color: Color(0xFFE4E4EB),
                 ),
               ),
               const SizedBox(height: 20),
@@ -48,8 +47,7 @@ class _Page1State extends State<Page1> {
                   height: 200,
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        117, 86, 106, 141), // สีพื้นหลังของ Container
+                    color: const Color(0xFFE4E4EB), // สีพื้นหลังของ Container
                     borderRadius: BorderRadius.circular(30),
                   ),
                   // button
@@ -61,8 +59,7 @@ class _Page1State extends State<Page1> {
                           borderRadius:
                               BorderRadius.circular(30), // กำหนดรูปร่างของกรอบ
                           border: Border.all(
-                            color: const Color.fromARGB(
-                                255, 141, 142, 155), // สีขอบ
+                            color: const Color(0xFFCCCCCC), // สีขอบ
                             width: 2, // ความหนาของเส้น
                           ),
                         ),
@@ -72,7 +69,7 @@ class _Page1State extends State<Page1> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                     const Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
+                                      const Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
                             );
                           },
                           style: ButtonStyle(
@@ -104,18 +101,20 @@ class _Page1State extends State<Page1> {
                           ),
                         ),
                         child: ElevatedButton(
-                          onPressed: () { Navigator.push(
+                          onPressed: () {
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                     const Register()), // ให้ NextPage() เป็นหน้าถัดไป
-                            );},
+                                      const Register()), // ให้ NextPage() เป็นหน้าถัดไป
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all<Color>(
                               Colors.transparent, // สีพื้นหลังของปุ่ม
                             ),
                             minimumSize: WidgetStateProperty.all(
-                            const Size(180, 50), // กำหนดขนาดของปุ่ม
+                              const Size(180, 50), // กำหนดขนาดของปุ่ม
                             ),
                           ),
                           child: const Text(

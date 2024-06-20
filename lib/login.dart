@@ -18,7 +18,7 @@ class _LoginpageState extends State<Loginpage> {
         leading: IconButton(
           icon:const Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
           onPressed: () {
-            Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
+            // Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
           },
         ),
       ),
