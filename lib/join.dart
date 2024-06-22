@@ -11,7 +11,7 @@ class _JoinState extends State<Join> {
   List<String> _items = ['Female', 'Male'];
   String? selectedItem;
   String? newValue;
-  bool isHovering = false;
+
   int index = 0;
 
   List<Map<String, String>> listData = [
@@ -346,12 +346,12 @@ class _JoinState extends State<Join> {
           ),
         ),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0),
               topRight: Radius.circular(20.0),
             ),
-            color: const Color(0xFF1A1C43),
+            color: Color(0xFF1A1C43),
           ),
           child: NavigationBar(
             height: 60,

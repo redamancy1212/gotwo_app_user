@@ -116,7 +116,7 @@ class _RegisterState extends State<Register> {
                 child: Container(
                   height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF1A1C43), width: 1),
+                    border: Border.all(color:const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Padding(
@@ -126,8 +126,8 @@ class _RegisterState extends State<Register> {
                           TextInputType.number, // กำหนดให้กรอกได้แค่ตัวเลข
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly
-                      ], // จำกัดให้กรอกเป็นตัวเลขเท่านั้น
-                      decoration: InputDecoration(
+                      ],
+                      decoration:const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone number',
                       ),

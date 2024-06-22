@@ -1,373 +1,304 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class Join extends StatefulWidget {
-//   const Join({Key? key}) : super(key: key);
+class Pickup extends StatefulWidget {
+  const Pickup({Key? key}) : super(key: key);
 
-//   @override
-//   State<Join> createState() => _JoinState();
-// }
+  @override
+  State<Pickup> createState() => _PickupState();
+}
 
-// class _JoinState extends State<Join> {
-//   List<String> _items = ['Female', 'Male'];
-//   String? selectedItem;
-//   String? newValue;
-//   bool isHovering = false;
-//   int index = 0;
+class Place {
+  final String name;
+  Place(this.name);
+}
 
-//   List<Map<String, String>> listData = [
-//     {
-//       'from': 'home',
-//       'to': 'F1',
-//       'date': '24/03/24',
-//       'time': '10:30',
-//       'gender': 'Male',
-//       'price': '50 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//     {
-//       'from': 'School',
-//       'to': 'F2',
-//       'date': '25/03/24',
-//       'time': '11:30',
-//       'gender': 'Male',
-//       'price': '35 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//     {
-//       'from': 'JJ',
-//       'to': 'F3',
-//       'date': '25/03/24',
-//       'time': '18:30',
-//       'gender': 'Male',
-//       'price': '40 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//     {
-//       'from': 'Workplace',
-//       'to': 'F4',
-//       'date': '26/03/24',
-//       'time': '12:30',
-//       'gender': 'Female',
-//       'price': '45 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//     {
-//       'from': 'Gym',
-//       'to': 'F5',
-//       'date': '26/03/24',
-//       'time': '13:30',
-//       'gender': 'Female',
-//       'price': '55 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//     {
-//       'from': 'Park',
-//       'to': 'F6',
-//       'date': '27/03/24',
-//       'time': '14:30',
-//       'gender': 'Female',
-//       'price': '60 THB',
-//       'image': 'assets/images/profile.png',
-//     },
-//   ];
+class Popular {
+  final String placess;
+  Popular(this.placess);
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         body: SafeArea(
-//           child: Column(
-//             children: [
-//               Center(
-//                 child: Column(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     const Text(
-//                       'Join',
-//                       style: TextStyle(
-//                         fontWeight: FontWeight.bold,
-//                         fontSize: 27,
-//                         color: Color(0xFF1A1C43),
-//                       ),
-//                     ),
-//                     const SizedBox(height: 20),
-//                     Padding(
-//                       padding: const EdgeInsets.only(bottom: 0.0),
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.center,
-//                         children: [
-//                           ElevatedButton(
-//                             onPressed: () {},
-//                             style: ButtonStyle(
-//                               backgroundColor: MaterialStateProperty.all<Color>(
-//                                 Color(0xFFCCCCCC),
-//                               ),
-//                               minimumSize: MaterialStateProperty.all(
-//                                 const Size(90, 30),
-//                               ),
-//                             ),
-//                             child: const Text(
-//                               'Pickup',
-//                               style: TextStyle(
-//                                 color: Color(0xFF1A1C43),
-//                                 fontWeight: FontWeight.bold,
-//                                 fontSize: 12,
-//                               ),
-//                             ),
-//                           ),
-//                           const SizedBox(width: 25),
-//                           Image.asset(
-//                             'assets/images/motorcycle.png',
-//                             height: 20,
-//                           ),
-//                           const SizedBox(width: 25),
-//                           ElevatedButton(
-//                             onPressed: () {},
-//                             style: ButtonStyle(
-//                               backgroundColor: MaterialStateProperty.all<Color>(
-//                                 Color(0xFFCCCCCC),
-//                               ),
-//                               minimumSize: MaterialStateProperty.all(
-//                                 const Size(90, 30),
-//                               ),
-//                             ),
-//                             child: const Text(
-//                               'Drop',
-//                               style: TextStyle(
-//                                 color: Color(0xFF1A1C43),
-//                                 fontWeight: FontWeight.bold,
-//                                 fontSize: 12,
-//                               ),
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                     const Padding(
-//                       padding: EdgeInsets.symmetric(horizontal: 20),
-//                       child: Divider(
-//                         color: Color(0xFF1A1C43),
-//                         thickness: 1,
-//                       ),
-//                     ),
-//                     ElevatedButton(
-//                       onPressed: () {},
-//                       style: ButtonStyle(
-//                         backgroundColor: MaterialStateProperty.all<Color>(
-//                           const Color(0xFF1A1C43),
-//                         ),
-//                         minimumSize:
-//                             MaterialStateProperty.all(const Size(90, 30)),
-//                       ),
-//                       child: const Text(
-//                         'search',
-//                         style: TextStyle(
-//                           color: Colors.white,
-//                           fontSize: 12,
-//                         ),
-//                       ),
-//                     ),
-//                     Padding(
-//                       padding: const EdgeInsets.symmetric(horizontal: 20),
-//                       child: Align(
-//                         alignment: Alignment.centerRight,
-//                         child: Container(
-//                           width: 80,
-//                           height: 20,
-//                           decoration: BoxDecoration(
-//                             border: Border.all(color: const Color(0xFF1A1C43)),
-//                             borderRadius: BorderRadius.circular(5.0),
-//                           ),
-//                           child: Padding(
-//                             padding:
-//                                 const EdgeInsets.symmetric(horizontal: 8.0),
-//                             child: DropdownButtonHideUnderline(
-//                               child: DropdownButton<String>(
-//                                 isExpanded: true,
-//                                 hint: const Text(
-//                                   "Gender",
-//                                   style: TextStyle(fontSize: 11),
-//                                 ),
-//                                 value: newValue,
-//                                 items: _items.map((String item) {
-//                                   return DropdownMenuItem(
-//                                     value: item,
-//                                     child: Text(
-//                                       item,
-//                                       style: const TextStyle(fontSize: 11),
-//                                     ),
-//                                   );
-//                                 }).toList(),
-//                                 onChanged: (String? value) {
-//                                   setState(() {
-//                                     newValue = value;
-//                                   });
-//                                 },
-//                                 icon:
-//                                     const Icon(Icons.arrow_drop_down, size: 12),
-//                               ),
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                     const SizedBox(height: 10),
-//                   ],
-//                 ),
-//               ),
-// //////////////////////////////-List-///////////////////////////////////////////////////
-//               Expanded(
-//                 child: ListView(
-//                   padding: const EdgeInsets.symmetric(horizontal: 30),
-//                   children: listData.map((item) {
-//                     return Padding(
-//                       padding: const EdgeInsets.symmetric(vertical: 5),
-//                       child: ElevatedButton(
-//                         onPressed: () {
-//                           // Handle button press for each item
-//                         },
-//                         style: ElevatedButton.styleFrom(
-//                           backgroundColor: Colors.white,
-//                           foregroundColor: const Color(0xFF1A1C43),
-//                           elevation: 2,
-//                           minimumSize: const Size(300, 100),
-//                           shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(10),
-//                             side: const BorderSide(
-//                               color: Color(0xFF1A1C43),
-//                               width: 2,
-//                             ),
-//                           ),
-//                         ),
-//                         child: Padding(
-//                           padding: const EdgeInsets.symmetric(horizontal: 0),
-//                           child: Stack(
-//                             children: [
-//                               Row(
-//                                 crossAxisAlignment: CrossAxisAlignment.center,
-//                                 children: [
-//                                   CircleAvatar(
-//                                     radius: 15,
-//                                     backgroundImage: AssetImage(
-//                                       item['image'] ??
-//                                           'assets/images/profile.png',
-//                                     ),
-//                                   ),
-//                                   const SizedBox(width: 15),
-//                                   Expanded(
-//                                     child: Column(
-//                                       crossAxisAlignment:
-//                                           CrossAxisAlignment.start,
-//                                       children: [
-//                                         Row(
-//                                           children: [
-//                                             const Text(
-//                                               'From: ',
-//                                               style: TextStyle(
-//                                                 fontSize: 11.5,
-//                                                 fontWeight: FontWeight.bold,
-//                                               ),
-//                                             ),
-//                                             Expanded(
-//                                               child: Text(
-//                                                 '${item['from']}',
-//                                                 style: const TextStyle(
-//                                                   fontSize: 11.5,
-//                                                 ),
-//                                               ),
-//                                             ),
-//                                             const Icon(Icons.arrow_forward),
-//                                             const SizedBox(
-//                                               width: 20,
-//                                             ),
-//                                             const Text(
-//                                               'To: ',
-//                                               style: TextStyle(
-//                                                 fontSize: 11.5,
-//                                                 fontWeight: FontWeight.bold,
-//                                               ),
-//                                             ),
-//                                             Expanded(
-//                                               child: Text(
-//                                                 '${item['to']}',
-//                                                 style: const TextStyle(
-//                                                   fontSize: 11.5,
-//                                                 ),
-//                                               ),
-//                                             ),
-//                                           ],
-//                                         ),
-//                                         Text(
-//                                           'Date: ${item['date']}',
-//                                           style:
-//                                               const TextStyle(fontSize: 11.5),
-//                                         ),
-//                                         Text(
-//                                           'Time: ${item['time']}',
-//                                           style:
-//                                               const TextStyle(fontSize: 11.5),
-//                                         ),
-//                                         Text(
-//                                           'Gender: ${item['gender']}',
-//                                           style:
-//                                               const TextStyle(fontSize: 11.5),
-//                                         ),
-//                                       ],
-//                                     ),
-//                                   ),
-//                                 ],
-//                               ),
-//                               Positioned(
-//                                 bottom: 0,
-//                                 right: 0,
-//                               child: Text(
-//                                 ' ${item['price']}',
-//                                 style: const TextStyle(
-//                                   fontSize: 18,
-//                                 ),
-//                               ),
-                            
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                       ),
-//                     );
-//                   }).toList(),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
+final List<Place> places = [
+  Place('F1'),
+  Place('Bus'),
+  Place('Place 3'),
+];
 
-//         ///////////////////////////-Tab-/////////////////////////////////////////////
-//         bottomNavigationBar: NavigationBarTheme(
-//           data: NavigationBarThemeData(
-//             indicatorColor: Colors.blue.shade100,
-//             labelTextStyle: MaterialStateProperty.all(
-//               const TextStyle(
-//                   fontSize: 10,
-//                   fontWeight: FontWeight.w500,
-//                   color: Colors.white),
-//             ),
-//           ),
-//           child: NavigationBar(
-//             height: 60,
-//             backgroundColor: const Color(0xFF1A1C43),
-//             labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-//             selectedIndex: index,
-//             onDestinationSelected: (index) =>
-//                 setState(() => this.index = index),
-//             destinations: const [
-//               NavigationDestination(
-//                   icon: Icon(Icons.home_outlined), label: 'Dashboard'),
-//               NavigationDestination(
-//                   icon: Icon(Icons.checklist_outlined), label: 'Status'),
-//               NavigationDestination(
-//                   icon: Icon(Icons.report_outlined), label: 'Report'),
-//               NavigationDestination(
-//                   icon: Icon(Icons.account_circle_outlined), label: 'Profile'),
-//             ],
-//           ),
-//         ));
-//   }
-// }
+final List<Popular> placess = [
+  Popular('F1'),
+  Popular('F2'),
+  Popular('F3'),
+  Popular('F4'),
+  Popular('F5'),
+  Popular('F6'),
+];
+
+class _PickupState extends State<Pickup> {
+  int index = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Join',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 27,
+                      color: Color(0xFF1A1C43),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 0.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFFCCCCCC),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(90, 30),
+                            ),
+                          ),
+                          child: const Text(
+                            'Pickup',
+                            style: TextStyle(
+                              color: Color(0xFF1A1C43),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 25),
+                        Image.asset(
+                          'assets/images/motorcycle.png',
+                          height: 20,
+                        ),
+                        const SizedBox(width: 25),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xFFCCCCCC),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(90, 30),
+                            ),
+                          ),
+                          child: const Text(
+                            'Drop',
+                            style: TextStyle(
+                              color: Color(0xFF1A1C43),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF1A1C43),
+                      ),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(90, 30)),
+                    ),
+                    child: const Text(
+                      'search',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Divider(
+                      color: Color(0xFF1A1C43),
+                      thickness: 1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Latest searches',
+                      style: TextStyle(
+                        color: Color(0xFF1A1C43),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: places.map((place) {
+                          return Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color(0xFFE5E3E3),
+                                ),
+                                minimumSize: MaterialStateProperty.all(
+                                  const Size(50, 20),
+                                ),
+                              ),
+                              child: Text(
+                                place.name,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF1A1C43),
+                                ),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Popular',
+                      style: TextStyle(
+                        color: Color(0xFF1A1C43),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ),
+            Center(
+              child: Column(
+                children: List.generate((placess.length / 3).ceil(), (index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 20.0,
+                      children: placess
+                          .skip(index * 3)
+                          .take(3)
+                          .map((Popular popular) {
+                        return ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xFFE5E3E3),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(60, 30),
+                            ),
+                            shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ),
+                          child: Text(
+                            popular.placess,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF1A1C43),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ],
+        ),
+      ),
+      ///////////////////////////-Tab-/////////////////////////////////////////////
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          indicatorColor: Colors.blue.shade100,
+          labelTextStyle: MaterialStateProperty.all(
+            const TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        child: Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0),
+              topRight: Radius.circular(20.0),
+            ),
+            color: Color(0xFF1A1C43),
+          ),
+          child: NavigationBar(
+            height: 60,
+            backgroundColor: Colors
+                .transparent, // ตั้งค่าสีพื้นหลังของ NavigationBar เป็นโปร่งใส
+            labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+            selectedIndex: index,
+            onDestinationSelected: (index) =>
+                setState(() => this.index = index),
+            destinations: const [
+              NavigationDestination(
+                icon: Icon(Icons.home_outlined),
+                label: 'Dashboard',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.checklist_outlined),
+                label: 'Status',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.report_outlined),
+                label: 'Report',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.account_circle_outlined),
+                label: 'Profile',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
