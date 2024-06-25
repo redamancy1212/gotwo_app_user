@@ -47,7 +47,7 @@ class _Page1State extends State<Page1> {
                   height: 200,
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFE4E4EB), // สีพื้นหลังของ Container
+                    color:const Color(0x7E68687D), // สีพื้นหลังของ Container
                     borderRadius: BorderRadius.circular(30),
                   ),
                   // button

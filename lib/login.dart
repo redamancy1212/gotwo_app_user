@@ -13,10 +13,10 @@ class _LoginpageState extends State<Loginpage> {
     return Scaffold(
       // backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
-        elevation: 0, // ไม่มีเงาใต้ AppBar
+        backgroundColor: Colors.transparent, 
+        elevation: 0, 
         leading: IconButton(
-          icon:const Icon(Icons.arrow_back, color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+          icon:const Icon(Icons.arrow_back, color: Colors.black), 
           onPressed: () {
             // Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
           },

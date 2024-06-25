@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/join.dart';
+import 'package:flutter_application_1/page1.dart';
 import 'package:flutter_application_1/pickup.dart';
 import 'package:flutter_application_1/utils.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Pickup(),
+      home:const Pickup(),
     );
   }
 }
