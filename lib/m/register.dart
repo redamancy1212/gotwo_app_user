@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:image_picker/image_picker.dart';
+// ignore: unused_import
 import 'bank.dart';
 
 class Register extends StatefulWidget {
