@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/m/term.dart';
 import 'package:image_picker/image_picker.dart';
 
 class BankAccount extends StatefulWidget {
@@ -178,7 +179,14 @@ class _BankAccountState extends State<BankAccount> {
             const SizedBox(height: 5),
             Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const Term()), // ให้ NextPage() เป็นหน้าถัดไป
+                    );
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xFF1A1C43)), // background color

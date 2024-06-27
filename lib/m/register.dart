@@ -31,32 +31,29 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
-        elevation: 0, // ไม่มีเงาใต้ AppBar
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back,
-              color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
-          onPressed: () {
-            // Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
-          },
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent, // กำหนดสีของ AppBar เป็นโปร่งใส
+      //   elevation: 0, // ไม่มีเงาใต้ AppBar
+      //   leading: IconButton(
+      //     icon: const Icon(Icons.arrow_back,
+      //         color: Colors.black), // ใช้ไอคอนแบ็กสีดำ
+      //     onPressed: () {
+      //       // Navigator.pop(context); // ย้อนกลับไปยังหน้าก่อนหน้านี้
+      //     },
+      //   ),
+      // ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-            
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-                Text(
-                      "Register",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 27,
-                        color: Color(0xFF1A1C43),
-                      ),
-                    ),
-            
+              const Text(
+                "Register",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 27,
+                  color: Color(0xFF1A1C43),
+                ),
+              ),
               const SizedBox(height: 10),
               if (_image != null)
                 CircleAvatar(
@@ -116,7 +113,8 @@ class _RegisterState extends State<Register> {
                 child: Container(
                   height: 40,
                   decoration: BoxDecoration(
-                    border: Border.all(color:const Color(0xFF1A1C43), width: 1),
+                    border:
+                        Border.all(color: const Color(0xFF1A1C43), width: 1),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Padding(
@@ -124,10 +122,8 @@ class _RegisterState extends State<Register> {
                     child: TextField(
                       keyboardType:
                           TextInputType.number, // กำหนดให้กรอกได้แค่ตัวเลข
-                      inputFormatters: [
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration:const InputDecoration(
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone number',
                       ),
@@ -146,7 +142,9 @@ class _RegisterState extends State<Register> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 15.0), // Adjusted padding inside the dropdown
+                    padding: const EdgeInsets.symmetric(
+                        horizontal:
+                            15.0), // Adjusted padding inside the dropdown
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
                         isExpanded: true,
@@ -217,12 +215,12 @@ class _RegisterState extends State<Register> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) =>
-                    //           const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
+                    );
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
