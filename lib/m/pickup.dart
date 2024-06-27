@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:searchfield/searchfield.dart';
 
@@ -10,7 +9,7 @@ class Pickup extends StatefulWidget {
 }
 
 class _PickupState extends State<Pickup> {
- String? selectedItem;
+  String? selectedItem;
   String? newValue;
   int index = 0;
 
@@ -24,7 +23,7 @@ class _PickupState extends State<Pickup> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
-          const  Center(
+            const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -96,10 +95,8 @@ class _PickupState extends State<Pickup> {
                             color: const Color(0x9FC8DFF0),
                           ),
                           onSubmit: (String value) {
-                            setState(() {
-                            });
+                            setState(() {});
                           },
-                          
                           suggestions: [
                             'F1',
                             'Central',
@@ -159,8 +156,7 @@ class _PickupState extends State<Pickup> {
                             color: const Color(0x9FC8DFF0),
                           ),
                           onSubmit: (String value) {
-                            setState(() {
-                            });
+                            setState(() {});
                           },
                           suggestions: [
                             'F1',
@@ -177,42 +173,41 @@ class _PickupState extends State<Pickup> {
                         ),
                       ),
                     ),
-               
                   ],
                 ),
               ),
-            ),     Column(
+            ),
+            Column(
               children: [
                 ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color(0xFF1A1C43),
-                            ),
-                            minimumSize:
-                                MaterialStateProperty.all(const Size(90, 30)),
-                          ),
-                          child: const Text(
-                            'search',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      const Color(0xFF1A1C43),
+                    ),
+                    minimumSize: MaterialStateProperty.all(const Size(90, 30)),
+                  ),
+                  child: const Text(
+                    'search',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
               ],
             ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Divider(
-                        color: Color(0xFF1A1C43),
-                        thickness: 1,
-                      ),
-                    ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Divider(
+                color: Color(0xFF1A1C43),
+                thickness: 1,
+              ),
+            ),
             SizedBox(height: 20),
           ],
         ),
-      ),     ///////////////////////////-Tab-/////////////////////////////////////////////
+      ), ///////////////////////////-Tab-/////////////////////////////////////////////
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
           indicatorColor: Colors.blue.shade100,
@@ -262,7 +257,5 @@ class _PickupState extends State<Pickup> {
         ),
       ),
     );
-    
   }
 }
-

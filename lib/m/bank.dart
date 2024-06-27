@@ -1,7 +1,8 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/m/term.dart';
+import 'package:gotwo_app_user/m/term.dart';
+// import 'package:flutter_application_1/m/term.dart';
 import 'package:image_picker/image_picker.dart';
 
 class BankAccount extends StatefulWidget {

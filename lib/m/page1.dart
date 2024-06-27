@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/m/login.dart';
-import 'package:flutter_application_1/m/register.dart';
+import 'package:gotwo_app_user/m/login.dart';
+import 'package:gotwo_app_user/m/register.dart';
+// import 'package:flutter_application_1/m/login.dart';
+// import 'package:flutter_application_1/m/register.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'bank.dart';
 
 class Register extends StatefulWidget {
@@ -13,16 +13,16 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   Uint8List? _image;
 
-  void selectImage() async {
-    List<int>? imageBytes = await pickImage(ImageSource.gallery);
-    if (imageBytes != null) {
-      setState(() {
-        _image = Uint8List.fromList(imageBytes);
-      });
-    } else {
-      print('No image selected');
-    }
-  }
+  // void selectImage() async {
+  //   List<int>? imageBytes = await pickImage(ImageSource.gallery);
+  //   if (imageBytes != null) {
+  //     setState(() {
+  //       _image = Uint8List.fromList(imageBytes);
+  //     });
+  //   } else {
+  //     print('No image selected');
+  //   }
+  // }
 
   // dropdown
   List<String> _items = ['Female', 'Male'];
@@ -62,7 +62,10 @@ class _RegisterState extends State<Register> {
                 ),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: selectImage,
+                // onPressed: selectImage,
+                onPressed: () {
+                  
+                },
                 child: const Text('Select Image'),
               ),
               const SizedBox(height: 10),
@@ -215,12 +218,12 @@ class _RegisterState extends State<Register> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) =>
+                    //           const BankAccount()), // ให้ NextPage() เป็นหน้าถัดไป
+                    // );
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
@@ -247,15 +250,15 @@ class _RegisterState extends State<Register> {
   }
 }
 
-Future<List<int>?> pickImage(ImageSource source) async {
-  final ImagePicker imagePicker = ImagePicker();
-  try {
-    XFile? file = await imagePicker.pickImage(source: source);
-    if (file != null) {
-      return await file.readAsBytes();
-    }
-  } catch (e) {
-    print('Error picking image: $e');
-  }
-  return null;
-}
+// Future<List<int>?> pickImage(ImageSource source) async {
+//   final ImagePicker imagePicker = ImagePicker();
+//   try {
+//     XFile? file = await imagePicker.pickImage(source: source);
+//     if (file != null) {
+//       return await file.readAsBytes();
+//     }
+//   } catch (e) {
+//     print('Error picking image: $e');
+//   }
+//   return null;
+// }
