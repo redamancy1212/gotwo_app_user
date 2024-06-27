@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gotwo_app_user/m/term.dart';
+// import 'package:gotwo_app_user/m/term.dart';
 // import 'package:flutter_application_1/m/term.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -181,12 +181,12 @@ class _BankAccountState extends State<BankAccount> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const Term()), // ให้ NextPage() เป็นหน้าถัดไป
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) =>
+                    //           const Term()), // ให้ NextPage() เป็นหน้าถัดไป
+                    // );
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(

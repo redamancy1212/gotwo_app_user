@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gotwo_app_user/m/login.dart';
-import 'package:gotwo_app_user/m/register.dart';
+// import 'package:gotwo_app_user/m/login.dart';
+// import 'package:gotwo_app_user/m/register.dart';
 // import 'package:flutter_application_1/m/login.dart';
 // import 'package:flutter_application_1/m/register.dart';
 
@@ -67,12 +67,12 @@ class _Page1State extends State<Page1> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) =>
+                            //           const Loginpage()), // ให้ NextPage() เป็นหน้าถัดไป
+                            // );
                           },
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all<Color>(
@@ -104,12 +104,12 @@ class _Page1State extends State<Page1> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const Register()), // ให้ NextPage() เป็นหน้าถัดไป
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) =>
+                            //           const Register()), // ให้ NextPage() เป็นหน้าถัดไป
+                            // );
                           },
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all<Color>(
