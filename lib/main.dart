@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/join.dart';
-import 'package:flutter_application_1/page1.dart';
-import 'package:flutter_application_1/pickup.dart';
-import 'package:flutter_application_1/utils.dart';
+import 'package:flutter_application_1/m/join.dart';
+import 'package:flutter_application_1/m/page1.dart';
+import 'package:flutter_application_1/m/pickup.dart';
+import 'package:flutter_application_1/m/register.dart';
+import 'package:flutter_application_1/m/utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+     
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const Pickup(),
+      home:const Register(),
     );
   }
 }
