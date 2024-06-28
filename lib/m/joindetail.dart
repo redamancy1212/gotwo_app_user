@@ -168,167 +168,159 @@ class _JoindetailState extends State<Joindetail> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                SizedBox(
+                Container(
                   width: 270,
-                  height: 220,
-                  child: Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey, // Border color
-                        width: 1, // Border width
-                      ),
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
+                  height: 250,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.grey, // Border color
+                      width: 1, // Border width
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 80,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Pickup',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Pickup',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.my_location,
+                            color: Color(0xFF1A1C43),
+                            size: 15,
+                          ),
+                          const SizedBox(width: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.blue[100],
+                              borderRadius:
+                                  BorderRadius.circular(5),
+                            ),
+                            child: Text(
+                              '${firstItem['from']}',
+                              style: const TextStyle(
+                                color: Color(0xFF1A1C43),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
                               ),
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.my_location,
-                                    color: Color(0xFF1A1C43),
-                                    size: 15,
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 5,
-                                      horizontal: 10,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue[100],
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(
-                                      '${firstItem['from']}',
-                                      style: const TextStyle(
-                                        color: Color(0xFF1A1C43),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 3,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 30.0),
-                                child: Text(
-                                  '${firstItem['comment']}',
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 30.0),
-                                child: Divider(
-                                  color: Color(0xFF1A1C43),
-                                  thickness: 1,
-                                  height: 0.5,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 30,
-                              ),
-                              const Text(
-                                'Drop',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.pin_drop,
-                                    color: Color(0xFF1A1C43),
-                                    size: 15,
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 5,
-                                      horizontal: 10,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue[100],
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(
-                                      '${firstItem['to']}',
-                                      style: const TextStyle(
-                                        color: Color(0xFF1A1C43),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 3,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 30.0),
-                                child: Text(
-                                  '${firstItem['comment']}',
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 30.0),
-                                child: Divider(
-                                  color: Color(0xFF1A1C43),
-                                  thickness: 1,
-                                  height: 0.5,
-                                ),
-                              ),
-                            ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30.0),
+                        child: Text(
+                          '${firstItem['comment']}',
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 30.0),
+                        child: Divider(
+                          color: Color(0xFF1A1C43),
+                          thickness: 1,
+                          height: 0.5,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const Text(
+                        'Drop',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.pin_drop,
+                            color: Color(0xFF1A1C43),
+                            size: 15,
+                          ),
+                          const SizedBox(width: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.blue[100],
+                              borderRadius:
+                                  BorderRadius.circular(5),
+                            ),
+                            child: Text(
+                              '${firstItem['to']}',
+                              style: const TextStyle(
+                                color: Color(0xFF1A1C43),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30.0),
+                        child: Text(
+                          '${firstItem['comment']}',
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 30.0),
+                        child: Divider(
+                          color: Color(0xFF1A1C43),
+                          thickness: 1,
+                          height: 0.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 30),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor : Colors.green,
+                    backgroundColor: Colors.green,
                     minimumSize: const Size(90, 40),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
