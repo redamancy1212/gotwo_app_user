@@ -22,7 +22,7 @@ class _BankAccountState extends State<BankAccount> {
         _image = Uint8List.fromList(imageBytes);
       });
     } else {
-      print('No image selected');
+      debugPrint('No image selected');
     }
   }
 
