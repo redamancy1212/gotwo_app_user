@@ -8,16 +8,18 @@ class Joindetail extends StatefulWidget {
 }
 
 class _JoindetailState extends State<Joindetail> {
-  // Example data
+
   final Map<String, String> item = {
-    'from': 'University',
+   
+  'name': '???',  
     'to': 'F1',
     'date': '24/03/24',
-    'time': '10:30',
     'gender': 'Male',
     'price': '50 THB',
     'comment': 'comment',
     'image': 'assets/images/profile.png',
+    'status': 'There is a helmet for you.',
+    'status2': 'Bring your own a helmet.',
   };
 
   @override
@@ -59,14 +61,14 @@ class _JoindetailState extends State<Joindetail> {
                   height: 50,
                 ),
                 const SizedBox(height: 5),
-                const Text(
-                  'Name Lastname',
-                  style: TextStyle(
-                    color: Color(0xFF1A1C43),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
-                ),
+                 Text(
+                      '${firstItem['name']} ',
+                      style: const TextStyle(
+                        color: Color(0xFF1A1C43),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 11,
+                      ),
+                    ),
                 const SizedBox(height: 5),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +115,7 @@ class _JoindetailState extends State<Joindetail> {
                   children: [
                     Icon(
                       firstItem['gender'] == 'Male' ? Icons.male : Icons.female,
-                      color: Color(0xFF1A1C43),
+                      color: const Color(0xFF1A1C43),
                       size: 15,
                     ),
                     const SizedBox(width: 5),
@@ -170,7 +172,7 @@ class _JoindetailState extends State<Joindetail> {
                 const SizedBox(height: 20),
                 Container(
                   width: 270,
-                  height: 250,
+                  height: 215,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -204,7 +206,7 @@ class _JoindetailState extends State<Joindetail> {
                         children: [
                           const Icon(
                             Icons.my_location,
-                            color: Color(0xFF1A1C43),
+                            color: Colors.green,
                             size: 15,
                           ),
                           const SizedBox(width: 10),
@@ -215,8 +217,7 @@ class _JoindetailState extends State<Joindetail> {
                             ),
                             decoration: BoxDecoration(
                               color: Colors.blue[100],
-                              borderRadius:
-                                  BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Text(
                               '${firstItem['from']}',
@@ -266,7 +267,7 @@ class _JoindetailState extends State<Joindetail> {
                         children: [
                           const Icon(
                             Icons.pin_drop,
-                            color: Color(0xFF1A1C43),
+                            color: Color(0xFFD3261A),
                             size: 15,
                           ),
                           const SizedBox(width: 10),
@@ -277,8 +278,7 @@ class _JoindetailState extends State<Joindetail> {
                             ),
                             decoration: BoxDecoration(
                               color: Colors.blue[100],
-                              borderRadius:
-                                  BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Text(
                               '${firstItem['to']}',
@@ -314,6 +314,17 @@ class _JoindetailState extends State<Joindetail> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  ' ${firstItem['status']}',
+                  style: const TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10,
                   ),
                 ),
                 const SizedBox(height: 30),

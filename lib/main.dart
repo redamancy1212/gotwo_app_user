@@ -3,6 +3,7 @@ import 'package:flutter_application_1/m/bank.dart';
 import 'package:flutter_application_1/m/join.dart';
 import 'package:flutter_application_1/m/joindetail.dart';
 import 'package:flutter_application_1/m/register.dart';
+import 'package:flutter_application_1/m/verifi.dart';
 // import 'package:gotwo_app_user/m/bank.dart';
 // // ignore: unused_import
 // import 'package:gotwo_app_user/m/join.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Joindetail(),
+      home: Verifi(),
     );
   }
 }
