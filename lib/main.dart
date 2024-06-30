@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/m/bank.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/m/join.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/m/joindetail.dart';
 import 'package:flutter_application_1/m/payment.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/m/register.dart';
+// ignore: unused_import
 import 'package:flutter_application_1/m/verifi.dart';
 // import 'package:gotwo_app_user/m/bank.dart';
 // // ignore: unused_import
