@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class Payment extends StatefulWidget {
-  const Payment({super.key});
+  const Payment({Key? key}) : super(key: key);
 
   @override
   State<Payment> createState() => _PaymentState();
@@ -40,6 +40,16 @@ class _PaymentState extends State<Payment> {
       'image': 'assets/images/profile.png',
       'id': 'ID3',
     },
+    {
+      'from': 'JJ',
+      'to': 'F3',
+      'date': '25/03/24',
+      'time': '18:30',
+      'gender': 'Male',
+      'price': '47 THB',
+      'image': 'assets/images/profile.png',
+      'id': 'ID4',
+    },
   ];
 
   @override
@@ -54,7 +64,8 @@ class _PaymentState extends State<Payment> {
             fontSize: 30,
           ),
         ),
-        backgroundColor: Colors.transparent,
+        // backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(
@@ -76,30 +87,84 @@ class _PaymentState extends State<Payment> {
                 children: listData.map((item) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
+                    ////////////////////////////////////////////////////////////
                     child: ElevatedButton(
                       onPressed: () {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: const Text('QR Code'),
-                              content: QrImage(
-                                data: item['id']!,
-                                version: QrVersions.auto,
-                                size: 200.0,
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: const Text('Close'),
+                            return Center(
+                              child: AlertDialog(
+                                title:const Center(
+                                  child: Text(
+                                    'QR Code',
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                              ],
+                                content: Container(
+                                  width: 200.0,
+                                  height: 250.0,
+                                  child: QrImageView(
+                                    data: item['price']!,
+                                    version: QrVersions.auto,
+                                    size: 200.0,
+                                  ),
+                                ),
+                              
+                                actions: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceEvenly, 
+                                    children: [
+                                      Row(
+                                        children: [
+                                          TextButton.icon(
+                                            onPressed: () {
+                                            
+                                            },
+                                            label: const Text(
+                                              'Save',
+                                              style: TextStyle(
+                                                  color: Colors
+                                                      .white), 
+                                            ),
+                                            icon: const Icon(
+                                              Icons.download,
+                                              color: Colors.white,
+                                            ),
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStateProperty.all<
+                                                      Color>(
+                                                const Color(0xFF1A1C43),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                         
+                                        },
+                                        icon: const Icon(Icons
+                                            .add_photo_alternate), 
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text(
+                                            'Close'), 
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             );
                           },
                         );
                       },
+                      //////////////////////////////////////////////////////////
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: const Color(0xFF1A1C43),
@@ -116,6 +181,7 @@ class _PaymentState extends State<Payment> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 0),
                         child: Stack(
+                          alignment: Alignment.center,
                           children: [
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,13 +189,15 @@ class _PaymentState extends State<Payment> {
                                 CircleAvatar(
                                   radius: 15,
                                   backgroundImage: AssetImage(
-                                    item['image'] ?? 'assets/images/profile.png',
+                                    item['image'] ??
+                                        'assets/images/profile.png',
                                   ),
                                 ),
                                 const SizedBox(width: 15),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -190,7 +258,7 @@ class _PaymentState extends State<Payment> {
                               bottom: 0,
                               right: 0,
                               child: Text(
-                                ' ${item['price']}',
+                                '${item['price']}',
                                 style: const TextStyle(
                                   fontSize: 18,
                                 ),
