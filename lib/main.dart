@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_application_1/m/register.dart';
 // import 'package:flutter_application_1/m/utils.dart';
 import 'package:gotwo_app_user/a/pending_cus.dart';
-
+import 'a/tabbar.dart';
 void main() {
   runApp(const MyApp());
 }
