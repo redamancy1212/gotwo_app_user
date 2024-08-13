@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 
-
-class Pending extends StatefulWidget {
-  const Pending({super.key});
+class PendingCus extends StatefulWidget {
+  const PendingCus({super.key});
 
   @override
-  State<Pending> createState() => _PendingState();
+  State<PendingCus> createState() => _PendingCusState();
 }
 
-class _PendingState extends State<Pending> {
+class _PendingCusState extends State<PendingCus> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pending'),
-      ),
-      body: Container(),
-    );
+    return const Placeholder();
   }
 }

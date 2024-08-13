@@ -11,8 +11,10 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_application_1/m/pickup.dart';
 // import 'package:flutter_application_1/m/register.dart';
 // import 'package:flutter_application_1/m/utils.dart';
-import 'package:gotwo_app_user/a/pending_cus.dart';
+
 import 'a/tabbar.dart';
+import 'a/confirm_cus.dart';
+import 'a/pending_cus.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Tabbar,
+      home: Tabbar(),
     );
   }
 }

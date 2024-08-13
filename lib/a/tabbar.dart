@@ -10,15 +10,15 @@ class Tabbar extends StatelessWidget {
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.home),
+              Tab(child: Text("Pending"),
               ),
-              Tab(icon: Icon(Icons.home),
+              Tab(child: Text("Confirm"),
               ),
-              Tab(icon: Icon(Icons.home),
+              Tab(child: Text("To Travel"),
               ),
-              Tab(icon: Icon(Icons.home),
+              Tab(child: Text("Success"),
               ),
-              Tab(icon: Icon(Icons.home),
+              Tab(child: Text("Cancel"),
               ),
             ],
           ),
@@ -27,23 +27,23 @@ class Tabbar extends StatelessWidget {
         body: TabBarView(
           children: [
             Container(
-              color: Colors.orangeAccent,
+              color: const Color.fromARGB(255, 232, 230, 228),
               child: const Icon(Icons.home),
             ),
             Container(
-              color: Colors.orangeAccent,
+              color: const Color.fromARGB(255, 232, 230, 228),
               child: const Icon(Icons.home),
             ),
             Container(
-              color: Colors.orangeAccent,
+              color: const Color.fromARGB(255, 232, 230, 228),
               child: const Icon(Icons.home),
             ),
             Container(
-              color: Colors.orangeAccent,
+              color:const Color.fromARGB(255, 232, 230, 228),
               child: const Icon(Icons.home),
             ),
             Container(
-              color: Colors.orangeAccent,
+              color: const Color.fromARGB(255, 232, 230, 228),
               child: const Icon(Icons.home),
             ),
           ]
