@@ -33,7 +33,7 @@ class _TermState extends State<Term> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Term and condotion",
+                    "Term and condotionnnn",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 27,
